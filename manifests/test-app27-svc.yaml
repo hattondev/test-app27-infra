@@ -1,0 +1,18 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: test-app27-svc
+  labels:
+    app: test-app27
+    version: 0.0.1
+    backstage.io/kubernetes-id: test-app27
+spec:
+  type: ClusterIP
+  ports:
+    - port: 80
+      targetPort: http
+      protocol: TCP
+      name: http
+  selector:
+    app: test-app27
